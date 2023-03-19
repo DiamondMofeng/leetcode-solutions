@@ -1,10 +1,5 @@
 package leetcode
 
-import (
-	"github.com/emirpasic/gods/lists/singlylinkedlist"
-	"github.com/emirpasic/gods/sets/hashset"
-)
-
 func findLexSmallestString(s string, inc int, rotate int) string {
 	n := len(s)
 	res := s
@@ -26,28 +21,27 @@ func findLexSmallestString(s string, inc int, rotate int) string {
 		return str[rotate:n] + str[0:rotate]
 	}
 
-	queue := singlylinkedlist.New(s)
-	set := hashset.New()
+	queue := []string{s}
+	visited := map[string]bool{}
 
-	for queue.Size() > 0 {
-		_cur, _ := queue.Get(0)
-		cur := _cur.(string)
-		queue.Remove(0)
+	for len(queue) > 0 {
+		cur := queue[0]
+		queue = queue[1:]
 
-		if set.Contains(cur) {
+		if visited[cur] {
 			continue
 		}
-		set.Add(cur)
+		visited[cur] = true
 
 		if cur < res {
 			res = cur
 		}
 
 		// increase
-		queue.Add(applyInc(cur))
+		queue = append(queue, applyInc(cur))
 
 		// rotate
-		queue.Add(applyRotate(cur))
+		queue = append(queue, applyRotate(cur))
 	}
 
 	return res
