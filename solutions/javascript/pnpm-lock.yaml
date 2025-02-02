@@ -1,0 +1,45 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@datastructures-js/priority-queue':
+        specifier: ^5.4.0
+        version: 5.4.1
+      '@types/lodash':
+        specifier: ^4.14.202
+        version: 4.17.15
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+
+packages:
+
+  '@datastructures-js/heap@3.2.0':
+    resolution: {integrity: sha512-FcU5ZAyb+VIOZz1HABsJUsbJi2ZyUDO7aoe97hq4d3tK3z8nMgwdxf5bO0gafR0ExFi18YTspntqHLzt4XOgnA==}
+
+  '@datastructures-js/priority-queue@5.4.1':
+    resolution: {integrity: sha512-t/YzAAs1ftFuvAp1MMAK1aX5GeeVwQ2EP8NfYC9OGdYj5AhAh1fpHoneSj54Ww3FNO/05YsdsBpotOfFEjTTCA==}
+
+  '@types/lodash@4.17.15':
+    resolution: {integrity: sha512-w/P33JFeySuhN6JLkysYUK2gEmy9kHHFN7E8ro0tkfmlDOgxBDzWEZ/J8cWA+fHqFevpswDTFZnDx+R9lbL6xw==}
+
+  lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
+snapshots:
+
+  '@datastructures-js/heap@3.2.0': {}
+
+  '@datastructures-js/priority-queue@5.4.1':
+    dependencies:
+      '@datastructures-js/heap': 3.2.0
+
+  '@types/lodash@4.17.15': {}
+
+  lodash@4.17.21: {}
